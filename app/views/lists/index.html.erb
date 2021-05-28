@@ -1,9 +1,16 @@
-<div class="container w-50">
-  <h1>Lists</h1>
-  <%= link_to 'Create new list', new_list_path %>
-  <br>
-  <br>
-  <% @lists.each do |list| %>
-    <p><%= link_to list.name, list_path(list.id) %></p>
-  <% end %>
+<div class="banner">
+  <div class="container w-50 text-center mb-3">
+    <h1 class="w-100 mb-3">Your Movie Lists</h1>
+    <%= link_to 'Create new list', new_list_path, class: "button" %>
+  </div>
+</div>
+<div class="container w-75 mt-5 mb-5 bg-light rounded">
+  <h2 class="pt-4 text-center">Lists</h2>
+  <div class="container">
+    <div class="row mb-5">
+      <% @lists.each do |list| %>
+        <%= link_to list.name, list_path(list.id), class: "list-card col-2 m-3 text-decoration-none" %>
+      <% end %>
+    </div>
+  </div>
 </div>
